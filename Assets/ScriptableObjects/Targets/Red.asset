@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe67995b90f488a40aadf06d610d0741, type: 3}
+  m_Name: Red
+  m_EditorClassIdentifier: 
+  points: 5
+  material: {fileID: 2100000, guid: b7bcd7c6b3acb3241b0d5af1a358b19b, type: 2}
+  mapIcon: {fileID: 21300000, guid: 65f0e363b74cf5845ab8c3fbc14f39ac, type: 3}
+  explosionParticleSystem: {fileID: 2955623459812423943, guid: 6ce1909ad1cba7540b32f85a5cb295ff, type: 3}
+  explosionClip: {fileID: 8300000, guid: ff07e6a2591fbf946a56d7ecded4cf82, type: 3}
+  description: Freeze! Every enemy is stopped during 30 seconds.

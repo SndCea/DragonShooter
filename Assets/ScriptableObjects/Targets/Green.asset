@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe67995b90f488a40aadf06d610d0741, type: 3}
+  m_Name: Green
+  m_EditorClassIdentifier: 
+  points: 3
+  material: {fileID: 2100000, guid: b1a8a6908ca5ad247ad05e4d89150386, type: 2}
+  mapIcon: {fileID: 21300000, guid: 02800fb9cff14da47a04572790384d8b, type: 3}
+  explosionParticleSystem: {fileID: 7226583673155636401, guid: 36010f333f11eaa46aaf7faa2cb41b92, type: 3}
+  explosionClip: {fileID: 8300000, guid: ff07e6a2591fbf946a56d7ecded4cf82, type: 3}
+  description: Your bullets deal double damage for 3 minutes

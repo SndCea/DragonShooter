@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe67995b90f488a40aadf06d610d0741, type: 3}
+  m_Name: Blue
+  m_EditorClassIdentifier: 
+  points: 1
+  material: {fileID: 2100000, guid: 490c25b2fda35fc4582a9582c4179ad5, type: 2}
+  mapIcon: {fileID: 21300000, guid: 626b9cddb29049e4cac50cd87b419945, type: 3}
+  explosionParticleSystem: {fileID: 5024009746357069194, guid: 7d935f382b851e048bc874c5c0adf9bd, type: 3}
+  explosionClip: {fileID: 8300000, guid: ff07e6a2591fbf946a56d7ecded4cf82, type: 3}
+  description: Double the punctuation of every Power Up during 3 minutes. Go get
+    them all!
