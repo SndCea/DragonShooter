@@ -79,7 +79,6 @@ public class BigDragonStateMachine : MonoBehaviour
 
     public void GetHit()
     {
-        Debug.Log("HJit");
         dragonWalk.enabled = false;
         dragonDie.enabled = false;
         dragonRun.enabled = false;

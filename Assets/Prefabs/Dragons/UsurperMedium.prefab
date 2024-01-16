@@ -1667,6 +1667,8 @@ GameObject:
   - component: {fileID: 5489825799163708796}
   - component: {fileID: 5489825799151906946}
   - component: {fileID: 5489825799163429757}
+  - component: {fileID: 6968208573394892766}
+  - component: {fileID: 6739005302149456701}
   m_Layer: 3
   m_Name: Dragon
   m_TagString: Dragon
@@ -1875,6 +1877,35 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 79b50b34e44b5fd4db1cdc9535a3c86b, type: 3}
+--- !u!54 &6968208573394892766
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5489825799163429758}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &6739005302149456701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5489825799163429758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af6c974d65f48cb4b9346bb5b59ee92d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAtacking: 0
 --- !u!1 &5489825799163430252
 GameObject:
   m_ObjectHideFlags: 0
@@ -2350,7 +2381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5489825799163624798
 Transform:
   m_ObjectHideFlags: 0
@@ -2398,8 +2429,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 5489825799163442234}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
+  m_Radius: 5
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -2407,7 +2438,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 4.33
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -2500,6 +2531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b48c5dc6e58e348b0c409e941fdd11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wasFreezed: 0
 --- !u!114 &5489825799163442232
 MonoBehaviour:
   m_ObjectHideFlags: 0
