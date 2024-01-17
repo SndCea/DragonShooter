@@ -20,13 +20,13 @@ public class DragonBite : MonoBehaviour
     {
         
     }
-    public void SetCollisionOnAttack()
+    public void EnableBite()
     {
-        GetComponentInChildren<DragonCollision>().isAtacking = true;
+        GetComponentInChildren<BiteCollision>().EnableCollision();
     }
-    public void SetCollisionOnSleep()
+    public void DisableBite()
     {
-        GetComponentInChildren<DragonCollision>().isAtacking = false;
+        GetComponentInChildren<BiteCollision>().DisableCollision();
     }
     private void OnDisable()
     {
