@@ -19,5 +19,6 @@ public class PlayerCollision : MonoBehaviour
     public void playerCollided ()
     {
         Debug.Log("Player Collided");
+        GameCanvasManager.GameManagerInstance.ScreenDamageEffect();
     }
 }

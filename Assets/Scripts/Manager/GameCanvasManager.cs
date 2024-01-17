@@ -19,7 +19,9 @@ public class GameCanvasManager : MonoBehaviour
     public GameObject bulletsPanel;
 
     int bulletsMargin = 40;
-    
+
+    [Header("Player Hit Effect")]
+    [SerializeField] GameObject damageEffect;
 
     [Header("Stamina")]
     public Image staminaImage;
@@ -51,6 +53,7 @@ public class GameCanvasManager : MonoBehaviour
     {
         SetCursorState(true);
         SetCanvasTargets();
+        damageEffect.SetActive(false);  
     }
 
     void Update()
@@ -79,6 +82,10 @@ public class GameCanvasManager : MonoBehaviour
 
     }
 
+    public void ScreenDamageEffect()
+    {
+        damageEffect.SetActive(true);
+    }
     public void UsingPowerUp (string title, float lifetime)
     {
         powerUpTitle.text = title;

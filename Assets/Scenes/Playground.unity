@@ -1346,6 +1346,7 @@ MonoBehaviour:
   canvasPointer: {fileID: 1088315016}
   targetsText: {fileID: 810020439}
   bulletsPanel: {fileID: 1152691825}
+  damageEffect: {fileID: 1068271869}
   staminaImage: {fileID: 1662848371}
   hasStamina: 1
   totalStaminaSeconds: 10
@@ -2453,6 +2454,11 @@ Transform:
   m_Father: {fileID: 2114283753834967213}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1068271869 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1068271869, guid: e479d7db58fed804d9f53b0e3ec7bd6e, type: 3}
+  m_PrefabInstance: {fileID: 2965435035811424363}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1088315016 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2965435037427063032, guid: e479d7db58fed804d9f53b0e3ec7bd6e, type: 3}
@@ -8484,10 +8490,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 426101382}
     m_Modifications:
-    - target: {fileID: 2965435036405332176, guid: e479d7db58fed804d9f53b0e3ec7bd6e, type: 3}
-      propertyPath: TargetLayer.m_Bits
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 2965435037427063032, guid: e479d7db58fed804d9f53b0e3ec7bd6e, type: 3}
       propertyPath: m_Name
       value: CanvasPointer
@@ -8526,18 +8528,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2965435037427063036, guid: e479d7db58fed804d9f53b0e3ec7bd6e, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2965435037427063036, guid: e479d7db58fed804d9f53b0e3ec7bd6e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2965435037427063036, guid: e479d7db58fed804d9f53b0e3ec7bd6e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2965435037427063036, guid: e479d7db58fed804d9f53b0e3ec7bd6e, type: 3}
-      propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2965435037427063036, guid: e479d7db58fed804d9f53b0e3ec7bd6e, type: 3}
