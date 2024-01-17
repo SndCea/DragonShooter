@@ -6,13 +6,10 @@ public class GameOverManager : MonoBehaviour
 {
     public static GameOverManager Instance { get; private set; }
 
-    [SerializeField] float totalMinutes;
-    [SerializeField] float totalTime;
     [SerializeField] GameObject canvasGOver;
 
     public delegate void GameOverDelegate();
     public event GameOverDelegate GameOverReleased;
-    bool gamedOver;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -26,27 +23,19 @@ public class GameOverManager : MonoBehaviour
     }
     void Start()
     {
-        totalTime = totalMinutes * 60;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (totalTime <= 0)
+    }
+    public void GameOver()
+    {
+        if (GameOverReleased != null)
         {
-            if (GameOverReleased != null && !gamedOver)
-            {
-                SetCursorState(false);
-                GameOverReleased();
-                canvasGOver.SetActive(true);
-                totalTime = 0.0f;
-                gamedOver = true;
-            }
-        } else
-        {
-            totalTime -= Time.deltaTime;
+            SetCursorState(false);
+            GameOverReleased();
+            canvasGOver.SetActive(true);
         }
-        
     }
     private void SetCursorState(bool newState)
     {

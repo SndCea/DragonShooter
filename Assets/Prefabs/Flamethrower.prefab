@@ -8580,11 +8580,11 @@ ParticleSystem:
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 2
-    inside: 1
+    inside: 0
     outside: 0
-    enter: 0
+    enter: 1
     exit: 0
     colliderQueryMode: 0
     radiusScale: 1
@@ -9611,3 +9611,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac6f99f1b09ef6459c29700ecc0581a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  part: {fileID: 0}

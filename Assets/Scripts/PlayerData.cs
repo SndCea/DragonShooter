@@ -31,10 +31,15 @@ public class PlayerData : MonoBehaviour
         currentLife = 0;
     }
 
-    public void PlayerHit()
+    public void PlayerHit(int damage)
     {
-        this.currentLife--;
+        this.currentLife -= damage;
         GameCanvasManager.GameManagerInstance.ScreenDamageEffect();
         GameCanvasManager.GameManagerInstance.PlayerHitEffect(currentLife, maxLife);
+        if (currentLife <= 0)
+        {
+            GameOverManager.Instance.GameOver();
+        } 
+        
     }
 }

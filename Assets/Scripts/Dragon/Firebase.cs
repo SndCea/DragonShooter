@@ -30,6 +30,8 @@ public class Firebase : MonoBehaviour
     [Tooltip("Particle systems that must be manually started and will not be played on start.")]
     public ParticleSystem[] ManualParticleSystems;
 
+    public int damage;
+
     private float startTimeMultiplier;
     private float startTimeIncrement;
 

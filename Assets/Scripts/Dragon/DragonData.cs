@@ -5,7 +5,7 @@ using UnityEngine;
 public class DragonData : MonoBehaviour
 {
     public Dragon scriptableDragon;
-    public float currentLife;
+    private float currentLife;
     private int numColors;
     private int indexColor;
     DragonLifeBar dragonLifeBar;

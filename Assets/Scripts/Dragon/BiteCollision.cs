@@ -14,7 +14,9 @@ public class BiteCollision : MonoBehaviour
     {
         if (collider.gameObject.transform.parent != null && collider.gameObject.transform.parent.tag == "Player" && onAtack)
         {
-            collider.gameObject.GetComponent<PlayerCollision>().playerCollided();
+            int damage = GetComponentInParent<DragonData>().scriptableDragon.damage;
+            collider.gameObject.GetComponent<PlayerCollision>().PlayerHit(damage);
+            Debug.Log("Mi damage " + GetComponentInParent<DragonData>().scriptableDragon.damage);
         }
     }
     public void EnableCollision()

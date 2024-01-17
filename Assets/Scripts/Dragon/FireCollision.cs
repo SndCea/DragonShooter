@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class FireCollision : MonoBehaviour
 {
+    private bool hurt;
+
     void Start()
     {
-        
+        hurt = true;
     }
 
     void Update()
@@ -16,9 +18,12 @@ public class FireCollision : MonoBehaviour
 
     private void OnParticleCollision(GameObject collided)
     {
-        if (collided.gameObject.transform.parent.tag == "Player")
+        if (collided.gameObject.transform.parent.tag == "Player" && hurt)
         {
-            collided.gameObject.GetComponent<PlayerCollision>().playerCollided();
+            int damage = GetComponentInParent<Firebase>().damage;
+            collided.gameObject.GetComponent<PlayerCollision>().PlayerHit(damage);
+            Debug.Log("Mi damage " + GetComponentInParent<DragonData>().scriptableDragon.damage);
+            hurt = false;
         }
     }
 }

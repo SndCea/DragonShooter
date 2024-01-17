@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BigDragon
   m_EditorClassIdentifier: 
   maxLife: 8
+  damage: 3
   attackDistance: 9
   runDistance: 50
   walkDistance: 15

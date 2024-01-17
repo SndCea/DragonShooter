@@ -6,6 +6,7 @@ using UnityEngine;
 public class Dragon : ScriptableObject
 {
     public int maxLife;
+    public int damage;
     public int attackDistance;
     public int runDistance;
     public int walkDistance;

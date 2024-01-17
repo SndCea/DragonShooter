@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: MediumDragon
   m_EditorClassIdentifier: 
   maxLife: 5
+  damage: 2
   attackDistance: 10
   runDistance: 150
   walkDistance: 0

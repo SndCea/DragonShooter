@@ -12,6 +12,7 @@ public class DragonFire : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         animator.SetBool("fire", true);
+
     }
 
     void Update()
@@ -22,6 +23,7 @@ public class DragonFire : MonoBehaviour
     {
         Quaternion rotation = Quaternion.LookRotation(dragonMouth.transform.forward);
         Instantiate(fireParticles, dragonMouth.transform.position, rotation, dragonMouth.transform);
+        fireParticles.GetComponent<Firebase>().damage = GetComponent<DragonData>().scriptableDragon.damage;
     }
 
     public void DestroyFire()
@@ -30,10 +32,7 @@ public class DragonFire : MonoBehaviour
         {
             Destroy(dragonMouth.transform.GetChild(0).gameObject);
         }
-        
     }
-
-
 
     private void OnDisable()
     {

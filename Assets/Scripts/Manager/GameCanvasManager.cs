@@ -88,7 +88,6 @@ public class GameCanvasManager : MonoBehaviour
     }
     public void PlayerHitEffect(float currentPlayerLife, float maxPlayerLife)
     {
-        Debug.Log("Vida: " + currentPlayerLife);
         healthBar1.fillAmount = currentPlayerLife / maxPlayerLife;
         if (healthBar2.fillAmount != healthBar1.fillAmount)
         {
