@@ -12,7 +12,6 @@ public class GameCanvasManager : MonoBehaviour
     [SerializeField] GameObject canvasPointer;
 
     [Header("Targets")]
-    public Text targetsText;
     private int numPoints;
 
     [Header("Shot")]
@@ -22,6 +21,8 @@ public class GameCanvasManager : MonoBehaviour
 
     [Header("Player Hit Effect")]
     [SerializeField] GameObject damageEffect;
+    [SerializeField] Image healthBar1;
+    [SerializeField] Image healthBar2;
 
     [Header("Stamina")]
     public Image staminaImage;
@@ -52,7 +53,6 @@ public class GameCanvasManager : MonoBehaviour
     void Start()
     {
         SetCursorState(true);
-        SetCanvasTargets();
         damageEffect.SetActive(false);  
     }
 
@@ -85,6 +85,19 @@ public class GameCanvasManager : MonoBehaviour
     public void ScreenDamageEffect()
     {
         damageEffect.SetActive(true);
+    }
+    public void PlayerHitEffect(float currentPlayerLife, float maxPlayerLife)
+    {
+        Debug.Log("Vida: " + currentPlayerLife);
+        healthBar1.fillAmount = currentPlayerLife / maxPlayerLife;
+        if (healthBar2.fillAmount != healthBar1.fillAmount)
+        {
+            if (healthBar2.fillAmount > healthBar1.fillAmount)
+            {
+                healthBar2.fillAmount -= 0.1f * 4 * Time.deltaTime;
+            }
+
+        }
     }
     public void UsingPowerUp (string title, float lifetime)
     {
@@ -123,17 +136,8 @@ public class GameCanvasManager : MonoBehaviour
 
         }
     }
-    public void TargetShot(int newPoints)
-    {
-        numPoints+= newPoints;
-        SetCanvasTargets();
-    }
-    public void SetCanvasTargets()
-    {
-        targetsText.text = "Total Points: " + numPoints;
 
-    }
-
+    
     private void cleanSprites() 
     { 
         if (bulletsPanel.transform.childCount > 0)
