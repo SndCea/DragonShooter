@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   itemName: Ray Range
-  icon: {fileID: 21300000, guid: 81cefa2b805fd4f49ae4de35fe4e869e, type: 3}
+  icon: {fileID: 21300000, guid: c2fd03102159dad40b0ca224eccff972, type: 3}
   prefab: {fileID: 3685630136615295591, guid: a4c4261420fe12840a00e5051c43af59, type: 3}
   lifetime: 60
   itemInformation: Increase your weapon ray range! During 1 minute you can shot from

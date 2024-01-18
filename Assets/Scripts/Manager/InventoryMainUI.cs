@@ -6,13 +6,11 @@ using UnityEngine;
 public class InventoryMainUI : MonoBehaviour
 {
     public GameObject panelSelectedData;
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         

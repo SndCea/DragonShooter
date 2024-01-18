@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   itemName: Freeze
-  icon: {fileID: 21300000, guid: 626b9cddb29049e4cac50cd87b419945, type: 3}
+  icon: {fileID: 21300000, guid: 93af6aaddc1df344ea2c2087045315ba, type: 3}
   prefab: {fileID: 2704831786393478161, guid: 98836c29ac2258e49842fc308d097809, type: 3}
   lifetime: 20
   itemInformation: Freeze! Every enemy is stopped during 20 seconds.

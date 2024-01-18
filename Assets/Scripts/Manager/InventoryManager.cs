@@ -10,7 +10,7 @@ using Item = XEntity.InventoryItemSystem.Item;
 
 public class InventoryManager : MonoBehaviour
 {
-    //Target Prefab es solo la parte visual, allí tiene Item, que es el que se añade al inventario, e Item tiene prefab,
+    //Target Prefab (separado en DamageBallPUp, FreezeBallPUp...) es solo la parte visual, allí tiene Item, que es el que se añade al inventario, e Item tiene prefab,
     //que es el prefab con los códigos de la funcionalidad, es decir, será prefab de Damage
     //lo que haré al usarlo será instantiate el prefab de ese item, que se cree en esa escena, este es un GO vacio con 
     //solo codigos, asi que se creará en la escena y él mismo se borrará al cabo de un tiempo
@@ -105,7 +105,7 @@ public class InventoryManager : MonoBehaviour
             {
                 //Durante pruebas desactivo esto porque lo estoy metiendo en stock manualmente
                 //y llamando a esta funcion en AMeter()
-                //inventoryStock.Add(item);
+                inventoryStock.Add(item);
                 return true;
             }
         } 
