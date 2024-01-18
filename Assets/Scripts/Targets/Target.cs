@@ -9,8 +9,8 @@ public class Target : MonoBehaviour
     public Item TargetItem;
     Animator animController;
     AudioSource audioSource;
-    AudioClip explosionClip;
-    GameObject explosionParticleSystem;
+    public AudioClip explosionClip;
+    public GameObject explosionParticleSystem;
 
 
     private void Awake()

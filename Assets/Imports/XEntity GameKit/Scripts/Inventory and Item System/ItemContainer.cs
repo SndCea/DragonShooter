@@ -55,7 +55,6 @@ namespace XEntity.InventoryItemSystem
 
             //The container is initilized on awake.
             InitializeContainer();
-
             foreach (ItemSlot slot in slots) 
             {
                 slot.Initialize();

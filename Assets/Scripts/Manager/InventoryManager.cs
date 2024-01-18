@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using XEntity.InventoryItemSystem;
+using static UnityEditor.Progress;
 using Item = XEntity.InventoryItemSystem.Item;
 
 public class InventoryManager : MonoBehaviour
@@ -16,7 +17,7 @@ public class InventoryManager : MonoBehaviour
     //solo codigos, asi que se creará en la escena y él mismo se borrará al cabo de un tiempo
     public static InventoryManager InventoryManagerInstance { get; private set; }
     public GameObject mainUI;
-    public ItemSlot[] slots;
+    public ItemSlot[] UIslots;
     public List<Item> inventoryStock = new List<Item>();
     public Item[] totalItems;
 
@@ -39,10 +40,10 @@ public class InventoryManager : MonoBehaviour
 
         //The container is initilized on awake.
         InitializeContainer();
-
-        foreach (ItemSlot slot in slots)
+        for (int i = 0; i < UIslots.Length; i++)
         {
-            slot.Initialize();
+            UIslots[i].Initialize();
+
         }
 
     }
@@ -63,7 +64,7 @@ public class InventoryManager : MonoBehaviour
     }
     void MetePowerUps()
     {
-        foreach(Item item in inventoryStock)
+        foreach (Item item in inventoryStock)
         {
             AddItem(item);
         }
@@ -78,11 +79,11 @@ public class InventoryManager : MonoBehaviour
     protected void IntialzieMainUI(Transform containerPanel)
     {
         Transform slotHolder = mainContainerUI.Find("Slot Holder");
-        slots = new ItemSlot[slotHolder.childCount];
-        for (int i = 0; i < slots.Length; i++)
+        UIslots = new ItemSlot[slotHolder.childCount];
+        for (int i = 0; i < UIslots.Length; i++)
         {
             ItemSlot slot = slotHolder.GetChild(i).GetComponent<ItemSlot>();
-            slots[i] = slot;
+            UIslots[i] = slot;
 
             Button slotButton = slot.GetComponent<Button>();
             slotButton.onClick.RemoveAllListeners();
@@ -99,16 +100,16 @@ public class InventoryManager : MonoBehaviour
     }
     public bool AddItem(Item item)
     {
-        for (int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < UIslots.Length; i++)
         {
-            if (slots[i].Add(item))
+            if (UIslots[i].Add(item))
             {
                 //Durante pruebas desactivo esto porque lo estoy metiendo en stock manualmente
                 //y llamando a esta funcion en AMeter()
                 inventoryStock.Add(item);
                 return true;
             }
-        } 
+        }
         return false;
 
     }

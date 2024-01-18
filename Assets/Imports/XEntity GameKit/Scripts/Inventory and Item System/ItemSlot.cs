@@ -26,7 +26,7 @@ namespace XEntity.InventoryItemSystem
         {
             //The UI variables are assigned here.
             iconImage = transform.Find("Icon Image").GetComponent<UnityEngine.UI.Image>();
-            countText = transform.Find("Count Text").GetComponent<UnityEngine.UI.Text>();
+            countText = transform.Find("Icon Image").gameObject.transform.Find("Count Text").GetComponent<UnityEngine.UI.Text>();
 
             //iconImage.gameObject.SetActive(false);
             countText.text = string.Empty;
