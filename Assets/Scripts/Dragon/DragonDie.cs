@@ -30,6 +30,9 @@ public class DragonDie : MonoBehaviour
 
     private void OnDestroy()
     {
-        Instantiate(powerUp, new Vector3(transform.position.x, powerUp.transform.position.y, transform.position.z), Quaternion.identity);
+        if (!GetComponent<DragonData>().stop)
+        {
+            Instantiate(powerUp, new Vector3(transform.position.x, powerUp.transform.position.y, transform.position.z), Quaternion.identity);
+        }
     }
 }

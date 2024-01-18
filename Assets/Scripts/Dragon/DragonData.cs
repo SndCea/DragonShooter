@@ -11,6 +11,7 @@ public class DragonData : MonoBehaviour
     DragonLifeBar dragonLifeBar;
     public MonoBehaviour stateMachine;
     public Material[] meshesColors;
+    public bool stop;
     private void OnEnable()
     {
         InicializeDelegates();
@@ -90,7 +91,8 @@ public class DragonData : MonoBehaviour
 
     public void StopGOver()
     {
-        Stop(true);
+        stop = true;
+        Stop(stop);
     }
     public void Stop(bool stop)
     {

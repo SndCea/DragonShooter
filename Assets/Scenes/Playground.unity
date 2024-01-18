@@ -533,7 +533,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6386210963127061531, guid: 5a1d667852d7b0648aa01bf225a33a69, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 233.4
+      value: 206.1
       objectReference: {fileID: 0}
     - target: {fileID: 6386210963127061531, guid: 5a1d667852d7b0648aa01bf225a33a69, type: 3}
       propertyPath: m_LocalPosition.y
@@ -541,7 +541,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6386210963127061531, guid: 5a1d667852d7b0648aa01bf225a33a69, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 147.3
+      value: 92.3
       objectReference: {fileID: 0}
     - target: {fileID: 6386210963127061531, guid: 5a1d667852d7b0648aa01bf225a33a69, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8577,6 +8577,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: ca5605f13d3937e40b508c59662c25fd, type: 2}
   - {fileID: 2100000, guid: 8a2d1f9276d746a42925272a2372ca11, type: 2}
   - {fileID: 2100000, guid: 8000a685f5b509b45b455c9ffd1f347f, type: 2}
+  stop: 0
 --- !u!195 &1434580212904464690
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -14667,6 +14668,10 @@ PrefabInstance:
       propertyPath: CanvasPointer
       value: 
       objectReference: {fileID: 1088315016}
+    - target: {fileID: 6885478699139812800, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: maxLife
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: vCamGO
       value: 
@@ -18933,6 +18938,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: acd197acde96c544b8d8fd85cc2e8b20, type: 2}
   - {fileID: 2100000, guid: c6a1d1f1e0ac339489c17274f110669a, type: 2}
   - {fileID: 2100000, guid: 1131ac1e42ee4884ab91bd69310a2715, type: 2}
+  stop: 0
 --- !u!195 &6428975057076156594
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -19395,6 +19401,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 3cf5d93e63ceca94da9ffb40a6ed68ed, type: 2}
   - {fileID: 2100000, guid: 63a8442de5af83f49902935ef0d8904e, type: 2}
   - {fileID: 2100000, guid: 2cc3d51c3b46bec4a95b1cf2d2488afd, type: 2}
+  stop: 0
 --- !u!114 &8778521072049394091
 MonoBehaviour:
   m_ObjectHideFlags: 0
