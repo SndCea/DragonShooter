@@ -93,6 +93,10 @@ public class InventoryManager : MonoBehaviour
         if (slot.IsEmpty) return;
 
         ShowItemDescription(slot.slotItem.itemInformation);
+        if (slot.gameObject.GetComponent<AudioSource>() != null)
+        {
+            slot.gameObject.GetComponent<AudioSource>().Play();
+        }
         selectedItemSlot = slot;
     }
     public bool AddItem(Item item)
