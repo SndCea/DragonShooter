@@ -38,7 +38,6 @@ public class InventoryManager : MonoBehaviour
             InventoryManagerInstance = this;
         }
 
-        //The container is initilized on awake.
         InitializeContainer();
         for (int i = 0; i < UIslots.Length; i++)
         {
@@ -48,13 +47,11 @@ public class InventoryManager : MonoBehaviour
 
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         MetePowerUps();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
@@ -104,8 +101,6 @@ public class InventoryManager : MonoBehaviour
         {
             if (UIslots[i].Add(item))
             {
-                //Durante pruebas desactivo esto porque lo estoy metiendo en stock manualmente
-                //y llamando a esta funcion en AMeter()
                 inventoryStock.Add(item);
                 return true;
             }

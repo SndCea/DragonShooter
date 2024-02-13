@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor.Timeline;
 using UnityEngine;
@@ -31,9 +32,9 @@ public class GameCanvasManager : MonoBehaviour
     public float actualStamina;
 
     [Header("Power Ups")]
-    public Text powerUpTitle;
-    public Text powerUpCounterText;
-    public bool usingPowerUp;
+    public TextMeshProUGUI powerUpTitle;
+    public TextMeshProUGUI powerUpTimerText;
+    private bool usingPowerUp;
     private float powerUpCounter;
 
     public static GameCanvasManager GameManagerInstance { get; private set; }
@@ -49,6 +50,10 @@ public class GameCanvasManager : MonoBehaviour
         }
     }
 
+    public bool GetUsingPowerUpBool()
+    {
+        return usingPowerUp;
+    }
 
     void Start()
     {
@@ -69,7 +74,7 @@ public class GameCanvasManager : MonoBehaviour
             else
             {
                 powerUpCounter -= Time.deltaTime;
-                powerUpCounterText.text = powerUpCounter.ToString("N0");
+                powerUpTimerText.text = powerUpCounter.ToString("N0");
             }
             
         }
@@ -78,7 +83,7 @@ public class GameCanvasManager : MonoBehaviour
     private void CleanPowerUpCanvas()
     {
         powerUpTitle.text = "";
-        powerUpCounterText.text = "";
+        powerUpTimerText.text = "";
 
     }
 
@@ -104,7 +109,7 @@ public class GameCanvasManager : MonoBehaviour
         if (lifetime > 0)
         {
             powerUpCounter = lifetime;
-            powerUpCounterText.text = powerUpCounter.ToString("N0");
+            powerUpTimerText.text = powerUpCounter.ToString("N0");
             usingPowerUp = true;
         }
     }
