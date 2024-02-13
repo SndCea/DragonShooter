@@ -99,7 +99,7 @@ namespace XEntity.InventoryItemSystem
                 slotItem = null;
                 iconImage.sprite = null;
                 countText.text = string.Empty;
-                iconImage.gameObject.SetActive(false);
+                //iconImage.gameObject.SetActive(false);
             }
         }
 
