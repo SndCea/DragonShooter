@@ -27,6 +27,7 @@ public class InventoryManager : MonoBehaviour
     public GameObject panelSelectedData;
     private ItemSlot selectedItemSlot;
 
+
     protected virtual void Awake()
     {
         if (InventoryManagerInstance != null && InventoryManagerInstance != this)

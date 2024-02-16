@@ -11,6 +11,7 @@ namespace XEntity.InventoryItemSystem
 
         public bool IsEmpty { get { return itemCount <= 0; } }
 
+
         public UnityEngine.UI.Image iconImage;
 
         private UnityEngine.UI.Text countText;
@@ -99,7 +100,13 @@ namespace XEntity.InventoryItemSystem
                 slotItem = null;
                 iconImage.sprite = null;
                 countText.text = string.Empty;
-                //iconImage.gameObject.SetActive(false);
+
+                //Tengo que avisar al padre para que reorganize pero no puedo acceder a el por el namespace
+
+                if (GetComponentInParent<ItemOrganizerInventory>())
+                {
+                    GetComponentInParent<ItemOrganizerInventory>().CheckOrder();
+                }
             }
         }
 
