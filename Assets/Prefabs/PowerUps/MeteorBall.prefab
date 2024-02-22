@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 4675940014580448490, guid: c7fe1e43d2c8c3f44a58456f65ce97b2, type: 3}
       propertyPath: TargetItem
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: db2cdee6a5d32844da779e173df8b764, type: 2}
     - target: {fileID: 4675940014580448490, guid: c7fe1e43d2c8c3f44a58456f65ce97b2, type: 3}
       propertyPath: explosionClip
       value: 
@@ -23,6 +23,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeteorBall
       objectReference: {fileID: 0}
+    - target: {fileID: 8280280680590464546, guid: c7fe1e43d2c8c3f44a58456f65ce97b2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b7bcd7c6b3acb3241b0d5af1a358b19b, type: 2}
     - target: {fileID: 8280280680590464548, guid: c7fe1e43d2c8c3f44a58456f65ce97b2, type: 3}
       propertyPath: m_RootOrder
       value: 0
