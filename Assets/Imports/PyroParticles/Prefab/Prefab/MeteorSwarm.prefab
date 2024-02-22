@@ -283,7 +283,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -336,7 +336,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -389,7 +389,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -442,7 +442,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -4781,7 +4781,7 @@ GameObject:
   m_Layer: 8
   m_Name: MeteorSwarm
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4816,8 +4816,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioSource: {fileID: 0}
   StartTime: 1
-  StopTime: 3
-  Duration: 3
+  StopTime: 200
+  Duration: 200
   ForceAmount: 0
   ForceRadius: 0
   IsProjectile: 0
@@ -4840,16 +4840,16 @@ MonoBehaviour:
   - {fileID: 4300002, guid: 371ed6c0dd75f6a4ebd1dfcb0b578b46, type: 3}
   - {fileID: 4300000, guid: 371ed6c0dd75f6a4ebd1dfcb0b578b46, type: 3}
   - {fileID: 4300010, guid: 371ed6c0dd75f6a4ebd1dfcb0b578b46, type: 3}
-  DestinationRadius: 25
-  Source: {x: 50, y: 100, z: -50}
-  SourceRadius: 10
+  DestinationRadius: 460
+  Source: {x: 250, y: 300, z: 250}
+  SourceRadius: 500
   TimeToImpact: 1
   MeteorsPerSecondRange:
-    Minimum: 10
-    Maximum: 20
+    Minimum: 35
+    Maximum: 50
   ScaleRange:
-    Minimum: 0.25
-    Maximum: 1
+    Minimum: 0.8
+    Maximum: 1.5
   MeteorLifeTimeRange:
     Minimum: 4
     Maximum: 8
@@ -5147,7 +5147,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -5200,7 +5200,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:

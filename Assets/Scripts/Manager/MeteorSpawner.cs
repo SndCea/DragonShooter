@@ -14,8 +14,9 @@ public class MeteorSpawner : MonoBehaviour
 
     void Update()
     {
-        
     }
+
+
     private void BeginEffect()
     {
         Vector3 pos;

@@ -75,6 +75,7 @@ namespace DigitalRuby.PyroParticles
 
             // find a random source and destination point within the specified radius
             Vector3 src = Source + (UnityEngine.Random.insideUnitSphere * SourceRadius);
+            src.y = Source.y;
             GameObject meteor = GameObject.Instantiate(MeteorPrefab);
             float scale = UnityEngine.Random.Range(ScaleRange.Minimum, ScaleRange.Maximum);
             meteor.transform.localScale = new Vector3(scale, scale, scale);
@@ -105,9 +106,9 @@ namespace DigitalRuby.PyroParticles
 
             // setup trail
             TrailRenderer t = meteor.GetComponent<TrailRenderer>();
-            t.startWidth = UnityEngine.Random.Range(2.0f, 3.0f) * scale;
+            t.startWidth = UnityEngine.Random.Range(3.0f, 5.0f) * scale;
             t.endWidth = UnityEngine.Random.Range(0.25f, 0.5f) * scale;
-            t.time = UnityEngine.Random.Range(0.25f, 0.5f);
+            t.time = UnityEngine.Random.Range(0.25f, 0.6f);
 
             // play sound
             if (EmissionSounds != null && EmissionSounds.Length != 0)
