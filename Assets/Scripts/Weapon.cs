@@ -76,7 +76,6 @@ public class Weapon : MonoBehaviour
 
                         if (hit.collider.gameObject.GetComponent<Target>().TargetItem.type == XEntity.InventoryItemSystem.ItemType.PowerUp) 
                         {
-                            Debug.Log("Power Upp");
                             InventoryManager.InventoryManagerInstance.AddItem(hit.collider.gameObject.GetComponent<Target>().TargetItem);
                         } else if (hit.collider.gameObject.GetComponent<Target>().TargetItem.type == XEntity.InventoryItemSystem.ItemType.MeteorShower)
                         {

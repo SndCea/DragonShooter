@@ -5,6 +5,8 @@ using UnityEngine;
 public class VictoryManager : MonoBehaviour
 {
     public static VictoryManager VictoryManagerInstance { get; private set; }
+    public delegate void ExtinctionDelegate();
+    public event ExtinctionDelegate Extinction;
     public GameObject meteorSpawner;
     private void Awake()
     {
@@ -15,6 +17,13 @@ public class VictoryManager : MonoBehaviour
         else
         {
             VictoryManagerInstance = this;
+        }
+    }
+    public void Extinct()
+    {
+        if (Extinction != null)
+        {
+            Extinction();
         }
     }
     void Start()
@@ -28,8 +37,20 @@ public class VictoryManager : MonoBehaviour
 
     public void SpawnMeteorShower()
     {
-       Instantiate(meteorSpawner);
+        Instantiate(meteorSpawner);
+
+        IEnumerator time = TimeToExtinct();
+        StartCoroutine(time);
+        Debug.Log("Extingo");
+        
     }
 
+    IEnumerator TimeToExtinct ()
+    {
+        Debug.Log("E`mpiezo");
+        yield return new WaitForSeconds(3);
+        Debug.Log("Yaaa");
+        Extinct();
+    }
 
 }

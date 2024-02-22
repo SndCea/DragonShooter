@@ -19,6 +19,7 @@ public class DragonData : MonoBehaviour
     private void OnDisable()
     {
         GameOverManager.Instance.GameOverReleased -= StopGOver;
+        VictoryManager.VictoryManagerInstance.Extinction -= DieVictory;
     }
     void Start()
     {
@@ -34,6 +35,11 @@ public class DragonData : MonoBehaviour
         {
             GameOverManager.Instance.GameOverReleased += StopGOver;
         }
+
+        if (VictoryManager.VictoryManagerInstance != null)
+        {
+            VictoryManager.VictoryManagerInstance.Extinction += DieVictory;
+        }
     }
     void Update()
     {
@@ -42,7 +48,12 @@ public class DragonData : MonoBehaviour
     public void ApplyDamage(int damage)
     {
         currentLife -= damage;
-        ChangeColor();
+        //ChangeColor();
+        ReactToDamage();
+    }
+
+    private void ReactToDamage ()
+    {
         if (currentLife <= 0)
         {
             if (stateMachine is SmallDragonStateMachine smallStateMachine)
@@ -74,9 +85,19 @@ public class DragonData : MonoBehaviour
             }
         }
         dragonLifeBar.SetCurrentLife(currentLife);
-
+    }
+    public void DieVictory()
+    {
+        currentLife = 0;
+        IEnumerator time = TimeToExtinct();
+        StartCoroutine(time);
     }
 
+    IEnumerator TimeToExtinct()
+    {
+        yield return new WaitForSeconds(Random.RandomRange(1, 3));
+        ReactToDamage();
+    }
     public void ChangeColor()
     {
         SkinnedMeshRenderer mesh = GetComponentInChildren<SkinnedMeshRenderer>();
@@ -94,6 +115,7 @@ public class DragonData : MonoBehaviour
         stop = true;
         Stop(stop);
     }
+
     public void Stop(bool stop)
     {
         if (stateMachine is SmallDragonStateMachine smallStateMachine)
