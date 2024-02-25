@@ -20,7 +20,6 @@ public class TimerManager : MonoBehaviour
     }
     private void InicializeDelegates()
     {
-        Debug.Log("HAGO");
         if (GameOverManager.Instance != null)
         {
             GameOverManager.Instance.GameOverReleased += Stop;
