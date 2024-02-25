@@ -76,6 +76,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "CursorStatus",
+                    "type": "Button",
+                    "id": "546dbbd4-0fb6-4e20-9375-234bc718f3b9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -280,7 +289,7 @@
                 {
                     "name": "",
                     "id": "1c0296bd-c073-4807-8f50-d9e8ef0df4b9",
-                    "path": "<Mouse>/rightButton",
+                    "path": "<Keyboard>/z",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
@@ -296,6 +305,17 @@
                     "processors": "",
                     "groups": "KeyboardMouse",
                     "action": "Map",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "378f1e94-556e-413c-bd44-b60013b28651",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "CursorStatus",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

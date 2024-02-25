@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -81,10 +82,14 @@ namespace StarterAssets
 		{
 			ZoomInput(value.isPressed);
 		}
+        public void OnCursorStatus(InputValue value)
+        {
+            SetCursorState();
+        }
 
 #endif
 
-		public void MoveInput(Vector2 newMoveDirection)
+        public void MoveInput(Vector2 newMoveDirection)
 		{
 			move = newMoveDirection;
 		} 
@@ -116,12 +121,18 @@ namespace StarterAssets
 
         private void OnApplicationFocus(bool hasFocus)
 		{
-			SetCursorState(cursorLocked);
+			SetCursorState();
 		}
 
-		private void SetCursorState(bool newState)
+		private void SetCursorState()
 		{
-			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
+			if (Cursor.lockState != CursorLockMode.Locked)
+			{
+                Cursor.lockState =  CursorLockMode.Locked;
+            } else
+			{
+                Cursor.lockState = CursorLockMode.None;
+            }
 		}
 	}
 	
