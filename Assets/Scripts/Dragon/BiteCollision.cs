@@ -12,11 +12,10 @@ public class BiteCollision : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.transform.parent != null && collider.gameObject.transform.parent.tag == "Player" && onAtack)
+        if (collider.gameObject.transform.parent != null && collider.gameObject.transform.tag == "PlayerCapsule" && onAtack)
         {
             int damage = GetComponentInParent<DragonData>().scriptableDragon.damage;
             collider.gameObject.GetComponent<PlayerCollision>().PlayerHit(damage);
-            Debug.Log("Mi damage " + GetComponentInParent<DragonData>().scriptableDragon.damage);
         }
     }
     public void EnableCollision()
