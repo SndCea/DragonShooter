@@ -14,7 +14,6 @@ public class BigDragonStateMachine : MonoBehaviour
 
     void Start()
     {
-        Walk();
     }
 
     void Update()

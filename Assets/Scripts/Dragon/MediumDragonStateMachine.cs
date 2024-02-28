@@ -18,7 +18,7 @@ public class MediumDragonStateMachine : MonoBehaviour
     }
     void Start()
     {
-        Walk();
+        
     }
 
     void Update()

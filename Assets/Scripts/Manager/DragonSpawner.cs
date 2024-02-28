@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem.HID;
+using Random = UnityEngine.Random;
 
 public class DragonSpawner : MonoBehaviour
 {
@@ -12,33 +14,87 @@ public class DragonSpawner : MonoBehaviour
     public GameObject BigDragon;
     public GameObject MediumDragon;
     public GameObject SmallDragon;
+    public GameObject [] DragonsInGame;
+    public int numTotalDragons;
+    public float numPercentBigDragon;
+    public float numPercentMediumDragon;
+    private List<int> usedPosIndexes;
 
     public Vector2 terrainSize = new Vector2(500f, 500f);
     public int numQuadrants;
     public float fixedHeight = 20f;
     public GameObject DragonPositionsParent;
-    private List <Vector3> dragonPositions;
+    private Vector3 [] dragonPositions;
 
     private void Awake()
     {
-        CreateQuadrants();
+        
         GetPositions();
     }
+
+    
     void Start()
     {
+        CreateDragons();
+        CreateQuadrants();
 
-        
     }
+    void CreateDragons()
+    {
+        numTotalDragons = Mathf.Min(numTotalDragons, dragonPositions.Length);
+        usedPosIndexes = new List<int>();
+        DragonsInGame = new GameObject[numTotalDragons];
+        float numBigDragons = Mathf.Round(numPercentBigDragon * numTotalDragons);
+        float numMediumDragons = Mathf.Round(numPercentMediumDragon * numTotalDragons);
+        float numSmallDragons = numTotalDragons - numMediumDragons - numBigDragons;
+        Debug.Log("Small: " + numSmallDragons + "Med: " + numMediumDragons + "Big: " + numBigDragons);
+
+        for (int i = 0; i < numTotalDragons; i++)
+        {
+            GameObject Dragon = SmallDragon;
+            if (i < numSmallDragons)
+            {
+                Dragon = SmallDragon;
+            }
+            else if (i < (numSmallDragons + numMediumDragons))
+            {
+                Dragon = MediumDragon;
+            }
+            else if (i < numTotalDragons)
+            {
+                Dragon = BigDragon;
+            }
+
+            Instantiate(Dragon, dragonPositions[GetNextPosIndex()], Quaternion.identity, this.transform);
+
+        }
+        usedPosIndexes.Clear();
+
+    }
+
+    private int GetNextPosIndex()
+    {
+        for (int i = 0; i < dragonPositions.Length; i++)
+        {
+            int indexPosition = Random.RandomRange(0, dragonPositions.Length);
+            if (!usedPosIndexes.Contains(indexPosition))
+            {
+                usedPosIndexes.Add(indexPosition);
+                return indexPosition;
+            }
+        }
+        return 0;
+
+    }
+
     void GetPositions()
     {
+        dragonPositions = new Vector3[DragonPositionsParent.transform.childCount];
         for (int i = 0; i < DragonPositionsParent.transform.childCount; i++)
         {
-            dragonPositions.Add(DragonPositionsParent.transform.GetChild(i).position);
+            Transform child = DragonPositionsParent.transform.GetChild(i).transform;
+            dragonPositions[i] = child.transform.position;
         }
-    }
-    void OnTriggerHandler(int colliderID)
-    {
-        Debug.Log("Trigger Collision Detected with BoxCollider ID: " + colliderID);
     }
 
     void CreateQuadrants()
@@ -71,7 +127,12 @@ public class DragonSpawner : MonoBehaviour
     {
         
     }
-    
+
+    void OnTriggerHandler(int colliderID)
+    {
+
+    }
+
 }
 
 
@@ -82,13 +143,38 @@ public class TriggerListener : MonoBehaviour
 {
     public UnityEvent<int> OnTriggerEnterEvent = new UnityEvent<int>();
     public int colliderID;
+    public bool used;
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.transform.tag.Equals("PlayerCapsule"))
+        if (!used)
         {
-            OnTriggerEnterEvent.Invoke(colliderID);
+            BoxCollider detectionCollider = GetComponent<BoxCollider>();
+
+            if (other.gameObject.transform.tag.Equals("PlayerCapsule"))
+            {
+                used = true;
+                Debug.Log("Tamaño physics box: " + detectionCollider.size + " posicion " + detectionCollider.center);
+
+                Collider[] objInside = Physics.OverlapBox(detectionCollider.center, detectionCollider.size / 2);
+
+                foreach (Collider collider in objInside)
+                {
+                    if (collider.gameObject.transform.tag.Equals("Dragon") )
+                    {
+                        //collider.gameObject.transform.parent.GetComponent<DragonData>().Stop(false);
+                        collider.gameObject.GetComponentInParent<DragonData>().Stop(false);
+
+                    } else if (collider.gameObject.transform.parent != null && collider.gameObject.transform.parent.transform.tag.Equals("Dragon"))
+                    {
+                        collider.gameObject.GetComponentInParent<DragonData>().Stop(false);
+
+                    }
+                }
+                OnTriggerEnterEvent.Invoke(colliderID);
+            }
         }
+        
         
     }
 }

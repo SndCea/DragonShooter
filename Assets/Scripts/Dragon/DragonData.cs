@@ -28,6 +28,8 @@ public class DragonData : MonoBehaviour
         dragonLifeBar = GetComponent<DragonLifeBar>();
         numColors = meshesColors.Length;
         indexColor = 0;
+
+        Stop(true);
     }
     private void InicializeDelegates()
     {
@@ -40,6 +42,7 @@ public class DragonData : MonoBehaviour
         {
             VictoryManager.VictoryManagerInstance.Extinction += DieVictory;
         }
+
     }
     void Update()
     {

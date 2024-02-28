@@ -15,5 +15,5 @@ MonoBehaviour:
   maxLife: 8
   damage: 3
   attackDistance: 9
-  runDistance: 50
+  runDistance: 150
   walkDistance: 15

@@ -17,7 +17,7 @@ public class SmallDragonStateMachine : MonoBehaviour
     }
     void Start()
     {
-        Walk();
+        
     }
 
     void Update()

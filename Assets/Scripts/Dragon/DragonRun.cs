@@ -30,7 +30,6 @@ public class DragonRun : MonoBehaviour
     private void OnDisable()
     {
         agent.isStopped = true;
-        Debug.Log("Stop run");
         animator.SetBool("run", false);
     }
 }
