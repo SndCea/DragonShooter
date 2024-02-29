@@ -10,7 +10,6 @@ public class DragonWalk : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log(agent.isStopped);
         agent.destination = goal.transform.position;
 
     }
@@ -18,7 +17,6 @@ public class DragonWalk : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         goal = GameObject.FindGameObjectWithTag("Player");
-        agent.speed = 3.5f;
         agent.isStopped = false;
 
     }

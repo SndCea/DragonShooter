@@ -2946,6 +2946,18 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 871768791cdb6af43869301fe8e23702, type: 2}
+    - target: {fileID: 3330179419156410467, guid: d93f392c51329bc49a70e826a6a087aa, type: 3}
+      propertyPath: m_Speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3330179419156410467, guid: d93f392c51329bc49a70e826a6a087aa, type: 3}
+      propertyPath: m_Height
+      value: 3.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 3330179419156410467, guid: d93f392c51329bc49a70e826a6a087aa, type: 3}
+      propertyPath: m_Radius
+      value: 2.65
+      objectReference: {fileID: 0}
     - target: {fileID: 4749787672301250104, guid: d93f392c51329bc49a70e826a6a087aa, type: 3}
       propertyPath: m_Name
       value: SmallDragon

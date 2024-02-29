@@ -22,7 +22,6 @@ public class FireCollision : MonoBehaviour
         {
             int damage = GetComponentInParent<Firebase>().damage;
             collided.gameObject.GetComponent<PlayerCollision>().PlayerHit(damage);
-            Debug.Log("Mi damage " + GetComponentInParent<DragonData>().scriptableDragon.damage);
             hurt = false;
         }
     }

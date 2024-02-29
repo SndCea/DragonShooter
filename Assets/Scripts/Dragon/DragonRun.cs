@@ -15,7 +15,7 @@ public class DragonRun : MonoBehaviour
 
 
         agent = GetComponent<NavMeshAgent>();
-        agent.speed = 7f;
+        agent.speed *= 1.5f;
         goal = GameObject.FindGameObjectWithTag("Player");
         agent.isStopped = false;
     }

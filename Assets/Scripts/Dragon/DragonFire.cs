@@ -17,6 +17,8 @@ public class DragonFire : MonoBehaviour
 
     void Update()
     {
+        transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform);
+
     }
 
     public void Fire()

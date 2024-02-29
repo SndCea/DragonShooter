@@ -17,3 +17,5 @@ MonoBehaviour:
   attackDistance: 5
   runDistance: 0
   walkDistance: 0
+  minSpeed: 3
+  maxSpeed: 5

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Events;
 using UnityEngine.InputSystem.HID;
 using Random = UnityEngine.Random;
@@ -14,7 +15,6 @@ public class DragonSpawner : MonoBehaviour
     public GameObject BigDragon;
     public GameObject MediumDragon;
     public GameObject SmallDragon;
-    public GameObject [] DragonsInGame;
     public int numTotalDragons;
     public float numPercentBigDragon;
     public float numPercentMediumDragon;
@@ -43,11 +43,9 @@ public class DragonSpawner : MonoBehaviour
     {
         numTotalDragons = Mathf.Min(numTotalDragons, dragonPositions.Length);
         usedPosIndexes = new List<int>();
-        DragonsInGame = new GameObject[numTotalDragons];
         float numBigDragons = Mathf.Round(numPercentBigDragon * numTotalDragons);
         float numMediumDragons = Mathf.Round(numPercentMediumDragon * numTotalDragons);
         float numSmallDragons = numTotalDragons - numMediumDragons - numBigDragons;
-        Debug.Log("Small: " + numSmallDragons + "Med: " + numMediumDragons + "Big: " + numBigDragons);
 
         for (int i = 0; i < numTotalDragons; i++)
         {
@@ -64,6 +62,10 @@ public class DragonSpawner : MonoBehaviour
             {
                 Dragon = BigDragon;
             }
+            int minSpeed = Dragon.GetComponent<DragonData>().scriptableDragon.minSpeed;
+            int maxSpeed = Dragon.GetComponent<DragonData>().scriptableDragon.maxSpeed;
+            int speed = Random.RandomRange(minSpeed, maxSpeed);
+            Dragon.GetComponent<NavMeshAgent>().speed = speed;
 
             Instantiate(Dragon, dragonPositions[GetNextPosIndex()], Quaternion.identity, this.transform);
 
@@ -154,7 +156,6 @@ public class TriggerListener : MonoBehaviour
             if (other.gameObject.transform.tag.Equals("PlayerCapsule"))
             {
                 used = true;
-                Debug.Log("Tamaño physics box: " + detectionCollider.size + " posicion " + detectionCollider.center);
 
                 Collider[] objInside = Physics.OverlapBox(detectionCollider.center, detectionCollider.size / 2);
 

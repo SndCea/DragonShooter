@@ -10,5 +10,6 @@ public class Dragon : ScriptableObject
     public int attackDistance;
     public int runDistance;
     public int walkDistance;
-
+    public int minSpeed;
+    public int maxSpeed;
 }
