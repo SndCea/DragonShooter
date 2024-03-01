@@ -65,6 +65,7 @@ public class DragonSpawner : MonoBehaviour
             int minSpeed = Dragon.GetComponent<DragonData>().scriptableDragon.minSpeed;
             int maxSpeed = Dragon.GetComponent<DragonData>().scriptableDragon.maxSpeed;
             int speed = Random.RandomRange(minSpeed, maxSpeed);
+            Debug.Log("Speed: " + speed + " entre: " + minSpeed + " y " + maxSpeed);
             Dragon.GetComponent<NavMeshAgent>().speed = speed;
 
             Instantiate(Dragon, dragonPositions[GetNextPosIndex()], Quaternion.identity, this.transform);

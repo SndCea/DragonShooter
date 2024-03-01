@@ -129,7 +129,7 @@ public class GameCanvasManager : MonoBehaviour
         {
             GameObject imgObject = new GameObject("BulletImage");
             RectTransform trans = imgObject.AddComponent<RectTransform>();
-            trans.transform.SetParent(bulletsPanel.transform); // setting parent
+            trans.transform.SetParent(bulletsPanel.transform);
             trans.localScale = Vector3.one;
 
             float panelHeight = bulletsPanelRT.sizeDelta.y * bulletsPanelRT.localScale.y;
@@ -151,12 +151,12 @@ public class GameCanvasManager : MonoBehaviour
         {
             GameObject imgObject = new GameObject("AmmoImage");
             RectTransform trans = imgObject.AddComponent<RectTransform>();
-            trans.transform.SetParent(ammoPanel.transform); // setting parent
+            trans.transform.SetParent(ammoPanel.transform);
             trans.localScale = Vector3.one;
 
             float panelHeight = ammoPanelRT.sizeDelta.y * ammoPanelRT.localScale.y;
 
-            trans.sizeDelta = new Vector2(panelHeight, panelHeight);
+            trans.sizeDelta = new Vector2(panelHeight / 1.5f, panelHeight / 1.5f);
 
             Image image = imgObject.AddComponent<Image>();
             image.sprite = ammoSprite;

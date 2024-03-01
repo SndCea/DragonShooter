@@ -82,7 +82,13 @@ public class Weapon : MonoBehaviour
                         if (hit.collider.gameObject.GetComponent<Target>().TargetItem.type == XEntity.InventoryItemSystem.ItemType.PowerUp) 
                         {
                             InventoryManager.InventoryManagerInstance.AddItem(hit.collider.gameObject.GetComponent<Target>().TargetItem);
-                        } else if (hit.collider.gameObject.GetComponent<Target>().TargetItem.type == XEntity.InventoryItemSystem.ItemType.MeteorShower)
+                        }
+                        else if (hit.collider.gameObject.GetComponent<Target>().TargetItem.type == XEntity.InventoryItemSystem.ItemType.ToolOrWeapon)
+                        {
+                            numAmmoLeft++;
+                            GameCanvasManager.GameManagerInstance.SetCanvasAmmo(numAmmoLeft, bullet.ammoSprite);
+                        }
+                        else if (hit.collider.gameObject.GetComponent<Target>().TargetItem.type == XEntity.InventoryItemSystem.ItemType.MeteorShower)
                         {
                             VictoryManager.VictoryManagerInstance.SpawnMeteorShower();
                         }
