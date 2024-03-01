@@ -15,6 +15,7 @@ public class DragonData : MonoBehaviour
     private void OnEnable()
     {
         InicializeDelegates();
+        Stop(true);
     }
     private void OnDisable()
     {
@@ -29,7 +30,6 @@ public class DragonData : MonoBehaviour
         numColors = meshesColors.Length;
         indexColor = 0;
 
-        Stop(true);
     }
     private void InicializeDelegates()
     {

@@ -17,6 +17,7 @@ public class GameCanvasManager : MonoBehaviour
 
     [Header("Shot")]
     public GameObject bulletsPanel;
+    public GameObject ammoPanel;
 
     int bulletsMargin = 40;
 
@@ -141,7 +142,29 @@ public class GameCanvasManager : MonoBehaviour
         }
     }
 
-    
+    public void SetCanvasAmmo(int numAmmoLeft, Sprite ammoSprite)
+    {
+        cleanAmmoSprites();
+        RectTransform ammoPanelRT = ammoPanel.GetComponent<RectTransform>();
+
+        for (int i = 0; i < numAmmoLeft; i++)
+        {
+            GameObject imgObject = new GameObject("AmmoImage");
+            RectTransform trans = imgObject.AddComponent<RectTransform>();
+            trans.transform.SetParent(ammoPanel.transform); // setting parent
+            trans.localScale = Vector3.one;
+
+            float panelHeight = ammoPanelRT.sizeDelta.y * ammoPanelRT.localScale.y;
+
+            trans.sizeDelta = new Vector2(panelHeight, panelHeight);
+
+            Image image = imgObject.AddComponent<Image>();
+            image.sprite = ammoSprite;
+
+        }
+    }
+
+
     private void cleanSprites() 
     { 
         if (bulletsPanel.transform.childCount > 0)
@@ -149,6 +172,16 @@ public class GameCanvasManager : MonoBehaviour
             for (int i = bulletsPanel.transform.childCount - 1; i >= 0; i--)
             {
                 Destroy(bulletsPanel.transform.GetChild(i).gameObject);
+            }
+        }
+    }
+    private void cleanAmmoSprites()
+    {
+        if (ammoPanel.transform.childCount > 0)
+        {
+            for (int i = ammoPanel.transform.childCount - 1; i >= 0; i--)
+            {
+                Destroy(ammoPanel.transform.GetChild(i).gameObject);
             }
         }
     }

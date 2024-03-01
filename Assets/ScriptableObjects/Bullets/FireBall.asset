@@ -15,7 +15,8 @@ MonoBehaviour:
   type: 1
   damage: 2
   numMaxShots: 7
+  numStartAmmo: 4
   rayDistance: 100
-  explosion: {fileID: 0}
   shotClip: {fileID: 8300000, guid: da5aeec65dfce4d449024607b399a5ec, type: 3}
   bulletSprite: {fileID: 21300020, guid: 309ac3eb4cc441349b63128366ca98b6, type: 3}
+  ammoSprite: {fileID: 21300050, guid: a1d46cd3f2614cc43be92ab44ea7d819, type: 3}

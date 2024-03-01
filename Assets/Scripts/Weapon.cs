@@ -10,6 +10,9 @@ public class Weapon : MonoBehaviour
 
     private int numShots;
     public int NumShots { get => numShots; set => numShots = value; }
+    [SerializeField]
+    private int numAmmoLeft;
+    public int NumAmmoLeft { get => numAmmoLeft; set => numAmmoLeft = value; }
 
     [Header("Weapon Sounds")]
     public AudioClip reloadClip;
@@ -25,6 +28,8 @@ public class Weapon : MonoBehaviour
     {
         InicializeDelegates();
         audioSource = GetComponent<AudioSource>();
+        numAmmoLeft = bullet.numStartAmmo;
+        GameCanvasManager.GameManagerInstance.SetCanvasAmmo(numAmmoLeft, bullet.ammoSprite);
         GameCanvasManager.GameManagerInstance.SetCanvasShots(numShots, bullet.numMaxShots, bullet.bulletSprite);
         dontShoot = false;
 
@@ -97,12 +102,21 @@ public class Weapon : MonoBehaviour
     }
     public void Reload ()
     {
-        if (!dontShoot && numShots == bullet.numMaxShots)
+        if (numAmmoLeft > 0)
         {
-            numShots = 0;
-            GetComponent<AudioSource>().PlayOneShot(reloadClip);
-            GameCanvasManager.GameManagerInstance.SetCanvasShots(numShots, bullet.numMaxShots, bullet.bulletSprite);
+            if (!dontShoot && numShots == bullet.numMaxShots)
+            {
+                numAmmoLeft--;
+                numShots = 0;
+                GetComponent<AudioSource>().PlayOneShot(reloadClip);
+                GameCanvasManager.GameManagerInstance.SetCanvasShots(numShots, bullet.numMaxShots, bullet.bulletSprite); 
+                GameCanvasManager.GameManagerInstance.SetCanvasAmmo(numAmmoLeft, bullet.ammoSprite);
+            }
+        } else
+        {
+            audioSource.PlayOneShot(emptyGunClip);
         }
+        
     }
 
     public void StopShoot(bool stop)

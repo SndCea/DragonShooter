@@ -41,15 +41,12 @@ public class VictoryManager : MonoBehaviour
 
         IEnumerator time = TimeToExtinct();
         StartCoroutine(time);
-        Debug.Log("Extingo");
         
     }
 
     IEnumerator TimeToExtinct ()
     {
-        Debug.Log("E`mpiezo");
         yield return new WaitForSeconds(3);
-        Debug.Log("Yaaa");
         Extinct();
     }
 
