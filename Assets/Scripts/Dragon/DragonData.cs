@@ -6,12 +6,14 @@ public class DragonData : MonoBehaviour
 {
     public Dragon scriptableDragon;
     private float currentLife;
-    private int numColors;
-    private int indexColor;
     DragonLifeBar dragonLifeBar;
     public MonoBehaviour stateMachine;
-    public Material[] meshesColors;
+    [SerializeField]
+    private GameObject powerUp;
     public bool stop;
+
+    public GameObject PowerUp { get => powerUp; set => powerUp = value; }
+
     private void OnEnable()
     {
         InicializeDelegates();
@@ -27,8 +29,6 @@ public class DragonData : MonoBehaviour
         InicializeDelegates();
         currentLife = scriptableDragon.maxLife;
         dragonLifeBar = GetComponent<DragonLifeBar>();
-        numColors = meshesColors.Length;
-        indexColor = 0;
 
     }
     private void InicializeDelegates()
@@ -101,17 +101,17 @@ public class DragonData : MonoBehaviour
         yield return new WaitForSeconds(Random.RandomRange(1, 3));
         ReactToDamage();
     }
-    public void ChangeColor()
-    {
-        SkinnedMeshRenderer mesh = GetComponentInChildren<SkinnedMeshRenderer>();
-        mesh.material = meshesColors[indexColor];
-        indexColor++;
+    //public void ChangeColor()
+    //{
+    //    SkinnedMeshRenderer mesh = GetComponentInChildren<SkinnedMeshRenderer>();
+    //    mesh.material = meshesColors[indexColor];
+    //    indexColor++;
 
-        if (indexColor == numColors)
-        {
-            indexColor = 0;
-        }
-    }
+    //    if (indexColor == numColors)
+    //    {
+    //        indexColor = 0;
+    //    }
+    //}
 
     public void StopGOver()
     {

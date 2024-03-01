@@ -6,10 +6,12 @@ using UnityEngine.AI;
 public class DragonDie : MonoBehaviour
 {
     private Animator animator;
-    public GameObject powerUp;
+    [SerializeField]
+    private GameObject powerUp;
     void OnEnable()
     {
         animator = GetComponent<Animator>();
+        powerUp = GetComponent<DragonData>().PowerUp;
 
         if (animator.enabled == false )
         {

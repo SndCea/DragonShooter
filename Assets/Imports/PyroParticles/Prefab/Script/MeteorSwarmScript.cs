@@ -4,16 +4,8 @@ using System.Collections.Generic;
 
 namespace DigitalRuby.PyroParticles
 {
-    /// <summary>
-    /// Meteor collision delegate
-    /// </summary>
-    /// <param name="script">Meteor swarm script</param>
-    /// <param name="meteor">Meteor</param>
     public delegate void MeteorSwarmCollisionDelegate(MeteorSwarmScript script, GameObject meteor);
 
-    /// <summary>
-    /// Handles the meteor swarm effect
-    /// </summary>
     public class MeteorSwarmScript : FireBaseScript, ICollisionHandler
     {
         [Tooltip("The game object prefab that represents the meteor.")]
@@ -58,9 +50,6 @@ namespace DigitalRuby.PyroParticles
         [Tooltip("Array of explosion sounds. One will be chosen at random upon impact.")]
         public AudioClip[] ExplosionSounds;
 
-        /// <summary>
-        /// A delegate that can be assigned to listen for collision. Use this to apply damage for meteor impacts or other effects.
-        /// </summary>
         [HideInInspector]
         public event MeteorSwarmCollisionDelegate CollisionDelegate;
 

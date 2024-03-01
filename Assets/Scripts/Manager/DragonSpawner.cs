@@ -25,6 +25,8 @@ public class DragonSpawner : MonoBehaviour
     public float fixedHeight = 20f;
     public GameObject DragonPositionsParent;
     private Vector3 [] dragonPositions;
+    public GameObject [] PowerUps;
+    public GameObject Ammo;
 
     private void Awake()
     {
@@ -50,6 +52,7 @@ public class DragonSpawner : MonoBehaviour
         for (int i = 0; i < numTotalDragons; i++)
         {
             GameObject Dragon = SmallDragon;
+            GameObject powerUp = Ammo;
             if (i < numSmallDragons)
             {
                 Dragon = SmallDragon;
@@ -57,16 +60,20 @@ public class DragonSpawner : MonoBehaviour
             else if (i < (numSmallDragons + numMediumDragons))
             {
                 Dragon = MediumDragon;
+                powerUp = GetRandomPowerUp();
             }
             else if (i < numTotalDragons)
             {
                 Dragon = BigDragon;
+                powerUp = GetRandomPowerUp();
             }
+
             int minSpeed = Dragon.GetComponent<DragonData>().scriptableDragon.minSpeed;
             int maxSpeed = Dragon.GetComponent<DragonData>().scriptableDragon.maxSpeed;
             int speed = Random.RandomRange(minSpeed, maxSpeed);
-            Debug.Log("Speed: " + speed + " entre: " + minSpeed + " y " + maxSpeed);
+
             Dragon.GetComponent<NavMeshAgent>().speed = speed;
+            Dragon.GetComponent<DragonData>().PowerUp = powerUp;
 
             Instantiate(Dragon, dragonPositions[GetNextPosIndex()], Quaternion.identity, this.transform);
 
@@ -135,7 +142,12 @@ public class DragonSpawner : MonoBehaviour
     {
 
     }
-
+    GameObject GetRandomPowerUp()
+    {
+        int numPowerUps = PowerUps.Length;
+        int index = Random.Range(0, numPowerUps);
+        return PowerUps[index];
+    }
 }
 
 
