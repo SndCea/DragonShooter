@@ -400,7 +400,7 @@ MonoBehaviour:
   BigDragon: {fileID: 5562958451180771723, guid: 3167eb3ff1492a74cac1af1df1bad44d, type: 3}
   MediumDragon: {fileID: 2986120225540652732, guid: 4aa7db68838f12049a287d27005f19be, type: 3}
   SmallDragon: {fileID: 6386210963126895997, guid: 5a1d667852d7b0648aa01bf225a33a69, type: 3}
-  numTotalDragons: 5
+  numTotalDragons: 1
   numPercentBigDragon: 0
   numPercentMediumDragon: 0
   terrainSize: {x: 500, y: 500}

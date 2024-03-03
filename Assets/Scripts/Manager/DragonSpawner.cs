@@ -87,8 +87,14 @@ public class DragonSpawner : MonoBehaviour
     {
         if (GetComponentInChildren<DragonData>() == null)
         {
-            Debug.Log("No dragons");
+            IEnumerator time = TimeToReCreate();
+            StartCoroutine(time);
         }
+    }
+    IEnumerator TimeToReCreate()
+    {
+        yield return new WaitForSeconds(4);
+        CreateDragons();
     }
     private int GetNextPosIndex()
     {

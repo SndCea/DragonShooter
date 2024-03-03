@@ -18,7 +18,6 @@ public class DragonDie : MonoBehaviour
             animator.enabled = true;
         }
         animator.SetTrigger("die");
-        GetComponentInParent<DragonSpawner>().CheckDragonsInScene();
     }
 
     void Update()
@@ -37,5 +36,6 @@ public class DragonDie : MonoBehaviour
         {
             Instantiate(powerUp, new Vector3(transform.position.x, powerUp.transform.position.y, transform.position.z), Quaternion.identity);
         }
+        GetComponentInParent<DragonSpawner>().CheckDragonsInScene();
     }
 }
