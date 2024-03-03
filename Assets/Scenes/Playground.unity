@@ -13152,7 +13152,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 68515383, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 68515385, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: CanvasGame
@@ -13164,11 +13164,11 @@ PrefabInstance:
       objectReference: {fileID: 1088315016}
     - target: {fileID: 619363202, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1019745235, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1225019517, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_Layer
@@ -13180,27 +13180,27 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: a506db2ca361ef849a1daa193faa1c62, type: 2}
     - target: {fileID: 1500520080, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1500520081, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1500520081, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -211.7828
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1500520081, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.5831847
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1500520081, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1500520081, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1500520083, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: far clip plane

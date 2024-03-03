@@ -4458,7 +4458,7 @@ PrefabInstance:
     - target: {fileID: 3330179419156410464, guid: d93f392c51329bc49a70e826a6a087aa, type: 3}
       propertyPath: powerUp
       value: 
-      objectReference: {fileID: 1203192627105557836, guid: 50025f9168527b54ab3fb1a32eba1208, type: 3}
+      objectReference: {fileID: 6383633871003264671, guid: 226dacabb60349d4fa1ea65273a390ac, type: 3}
     - target: {fileID: 3330179419156410464, guid: d93f392c51329bc49a70e826a6a087aa, type: 3}
       propertyPath: stateMachine
       value: 
@@ -4509,7 +4509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3330179419156410467, guid: d93f392c51329bc49a70e826a6a087aa, type: 3}
       propertyPath: m_Speed
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3330179419156410467, guid: d93f392c51329bc49a70e826a6a087aa, type: 3}
       propertyPath: m_Height
