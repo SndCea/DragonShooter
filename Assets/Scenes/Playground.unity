@@ -1541,6 +1541,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8687416390312011324, guid: a81a9aefc81e6774fb5daa9c85ed6ada, type: 3}
+      propertyPath: m_CarveOnlyStationary
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8978216447208280299, guid: a81a9aefc81e6774fb5daa9c85ed6ada, type: 3}
       propertyPath: m_Name
       value: AmmoBall (1)
@@ -7016,6 +7020,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeteorBall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4384563075377223304, guid: 2a7a995aee263b74a90540ac76ea9ace, type: 3}
+      propertyPath: m_CarveOnlyStationary
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a7a995aee263b74a90540ac76ea9ace, type: 3}
 --- !u!1 &1522675961
@@ -8038,6 +8046,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8687416390312011324, guid: a81a9aefc81e6774fb5daa9c85ed6ada, type: 3}
+      propertyPath: m_CarveOnlyStationary
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8978216447208280299, guid: a81a9aefc81e6774fb5daa9c85ed6ada, type: 3}
       propertyPath: m_Name
       value: AmmoBall

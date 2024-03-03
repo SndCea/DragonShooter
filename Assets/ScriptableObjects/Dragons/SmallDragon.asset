@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLife: 3
   damage: 1
-  attackDistance: 5
+  attackDistance: 6
   runDistance: 0
   walkDistance: 0
   minSpeed: 3
