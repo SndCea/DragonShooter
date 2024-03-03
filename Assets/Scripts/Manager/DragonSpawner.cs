@@ -19,6 +19,7 @@ public class DragonSpawner : MonoBehaviour
     public float numPercentBigDragon;
     public float numPercentMediumDragon;
     private List<int> usedPosIndexes;
+    private List<int> numDragonsInScene;
 
     public Vector2 terrainSize = new Vector2(500f, 500f);
     public int numQuadrants;
@@ -82,6 +83,13 @@ public class DragonSpawner : MonoBehaviour
 
     }
 
+    public void CheckDragonsInScene()
+    {
+        if (GetComponentInChildren<DragonData>() == null)
+        {
+            Debug.Log("No dragons");
+        }
+    }
     private int GetNextPosIndex()
     {
         for (int i = 0; i < dragonPositions.Length; i++)

@@ -19,6 +19,10 @@ public class SmallDragonStateMachine : MonoBehaviour
     {
         
     }
+    private void OnEnable()
+    {
+        agent = GetComponent<NavMeshAgent>();
+    }
 
     void Update()
     {
@@ -91,6 +95,7 @@ public class SmallDragonStateMachine : MonoBehaviour
         //ya que pondrá enabled a true
 
         Animator animator = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
         agent.isStopped = stop;
         animator.enabled = !stop;
         freezed = stop;
