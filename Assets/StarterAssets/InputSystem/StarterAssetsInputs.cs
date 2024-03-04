@@ -67,6 +67,14 @@ namespace StarterAssets
             Minimap.SetActive(!Minimap.activeSelf);
             
         }
+        public void OnTutorial()
+        {
+			if (GameCanvasManager.GameManagerInstance != null)
+            {
+                GameCanvasManager.GameManagerInstance.EnableCanvasTutorial();
+            }
+
+        }
 
         public void OnJump(InputValue value)
         {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEditor.Timeline;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +12,7 @@ public class GameCanvasManager : MonoBehaviour
     [Header("GOs")]
     [SerializeField] GameObject canvasGame;
     [SerializeField] GameObject canvasPointer;
+    [SerializeField] GameObject canvasTutorial;
 
     [Header("Targets")]
     private int numPoints;
@@ -236,6 +238,10 @@ public class GameCanvasManager : MonoBehaviour
         }
     }
 
+    public void EnableCanvasTutorial()
+    {
+        canvasTutorial.SetActive(!canvasTutorial.activeSelf);
+    }
     public void VisibleCanvas (bool b)
     {
         canvasGame.SetActive(b);
