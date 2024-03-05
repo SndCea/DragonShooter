@@ -21,8 +21,6 @@ public class GameCanvasManager : MonoBehaviour
     public GameObject bulletsPanel;
     public GameObject ammoPanel;
 
-    int bulletsMargin = 40;
-
     [Header("Player Hit Effect")]
     [SerializeField] GameObject damageEffect;
     [SerializeField] Image healthBar1;

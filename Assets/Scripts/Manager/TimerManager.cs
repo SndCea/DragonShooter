@@ -9,6 +9,18 @@ public class TimerManager : MonoBehaviour
     private float actualTime;
     public TextMeshProUGUI timerText;
     private bool stop;
+    public static TimerManager Instance { get; private set; }
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
     void Start()
     {
         InicializeDelegates();
@@ -17,6 +29,10 @@ public class TimerManager : MonoBehaviour
     {
         actualTime = 0;
         stop = false;
+    }
+    public float GetTime ()
+    {
+        return actualTime;
     }
     private void InicializeDelegates()
     {
