@@ -68,10 +68,26 @@ public class VictoryManager : MonoBehaviour
 
     public void SaveData()
     {
+        InicializePlayerPrefabs();
         float gameTime = TimerManager.Instance.GetTime();
         int nAttempt = PlayerPrefs.GetInt("nAttempt");
         string nAttString = "nAttempt_" + nAttempt;
         PlayerPrefs.SetFloat(nAttString, gameTime);
+        Debug.Log("Saving " + nAttString + " con " + gameTime);
+    }
+    private void InicializePlayerPrefabs()
+    {
+        int nAtt;
+        if (!PlayerPrefs.HasKey("nAttempt"))
+        {
+            nAtt = 0;
+        }
+        else
+        {
+            nAtt = PlayerPrefs.GetInt("nAttempt") + 1;
+        }
+        Debug.Log("Attempt n: " + nAtt);
+        PlayerPrefs.SetInt("nAttempt", nAtt);
     }
 
 }

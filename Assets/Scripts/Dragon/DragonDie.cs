@@ -36,6 +36,9 @@ public class DragonDie : MonoBehaviour
         {
             Instantiate(powerUp, new Vector3(transform.position.x, powerUp.transform.position.y, transform.position.z), Quaternion.identity);
         }
-        GetComponentInParent<DragonSpawner>().CheckDragonsInScene();
+        if (GetComponentInParent<DragonSpawner>() != null)
+        {
+            GetComponentInParent<DragonSpawner>().CheckDragonsInScene();
+        }
     }
 }

@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
-    List<GameScore> AllGameScores;
+    public List<GameScore> AllGameScores;
     private void Awake()
     {
         AllGameScores = new List<GameScore>();
@@ -21,6 +22,8 @@ public class MenuManager : MonoBehaviour
     }
     public void GetAllGameScores()
     {
+
+        Debug.Log("Get All Game Scrores");
         if (PlayerPrefs.HasKey("nAttempt"))
         {
             int nAttemptsTotal = PlayerPrefs.GetInt("nAttempt");
@@ -28,18 +31,18 @@ public class MenuManager : MonoBehaviour
             for (int i = 0; i < nAttemptsTotal; i++)
             {
                 nAttString = "nAttempt_" + i;
+
                 if (PlayerPrefs.HasKey(nAttString))
                 {
                     float time = PlayerPrefs.GetFloat(nAttString);
                     int nAtt = i;
+                    Debug.Log("Has GScore Key : " + nAtt + " -" + time);
                     GameScore gameScore = new GameScore(nAtt, time);
                     AllGameScores.Add(gameScore);
                 }
             }
         }
-        PrintAllGameScores();
-
-
+        OrderGameScores();
     }
 
     public void PrintAllGameScores()
@@ -50,7 +53,13 @@ public class MenuManager : MonoBehaviour
             Debug.Log(AllGameScores[i].nAttempt + " " + AllGameScores[i].time);
         }
         
+    }
+    public void OrderGameScores ()
+    {
+        Debug.Log("ORDENANDO");
+        AllGameScores.Sort((x, y) => y.time.CompareTo(x.time));
 
+        PrintAllGameScores();
     }
 }
 
