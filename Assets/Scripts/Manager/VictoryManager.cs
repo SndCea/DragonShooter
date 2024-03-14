@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class VictoryManager : MonoBehaviour
@@ -9,6 +10,11 @@ public class VictoryManager : MonoBehaviour
     public event ExtinctionDelegate Extinction;
     public GameObject meteorSpawner;
     [SerializeField] GameObject canvasVictory;
+    [SerializeField] TextMeshProUGUI canvasRoundText;
+    [SerializeField] TextMeshProUGUI canvasTimeText;
+
+    float gameTime;
+    int nAttempt;
     private void Awake()
     {
         if (VictoryManagerInstance != null && VictoryManagerInstance != this)
@@ -23,7 +29,8 @@ public class VictoryManager : MonoBehaviour
     
     void Start()
     {
-        
+
+        InicializePlayerPrefabs();
     }
     void Update()
     {
@@ -62,18 +69,22 @@ public class VictoryManager : MonoBehaviour
     }
     public void EnableCanvas()
     {
+        gameTime = TimerManager.Instance.GetTime();
+        nAttempt = PlayerPrefs.GetInt("nAttempt");
+        canvasRoundText.text = "Round: " + nAttempt;
+        canvasTimeText.text = "Time: " + gameTime;
         canvasVictory.SetActive(true);
-        SaveData();
+        SaveData(true);
     }
 
-    public void SaveData()
+    public void SaveData(bool win)
     {
-        InicializePlayerPrefabs();
-        float gameTime = TimerManager.Instance.GetTime();
-        int nAttempt = PlayerPrefs.GetInt("nAttempt");
+        gameTime = TimerManager.Instance.GetTime();
+        nAttempt = PlayerPrefs.GetInt("nAttempt");
         string nAttString = "nAttempt_" + nAttempt;
+        string nAttStringWin = "nAttempt_Win_" + nAttempt;
         PlayerPrefs.SetFloat(nAttString, gameTime);
-        Debug.Log("Saving " + nAttString + " con " + gameTime);
+        PlayerPrefs.SetInt(nAttStringWin, win ? 1 : 0);
     }
     private void InicializePlayerPrefabs()
     {
@@ -86,7 +97,6 @@ public class VictoryManager : MonoBehaviour
         {
             nAtt = PlayerPrefs.GetInt("nAttempt") + 1;
         }
-        Debug.Log("Attempt n: " + nAtt);
         PlayerPrefs.SetInt("nAttempt", nAtt);
     }
 

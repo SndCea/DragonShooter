@@ -1,12 +1,10 @@
 using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using XEntity.InventoryItemSystem;
-using static UnityEditor.Progress;
 using Item = XEntity.InventoryItemSystem.Item;
 
 public class InventoryManager : MonoBehaviour

@@ -89,8 +89,6 @@ public class SmallDragonStateMachine : MonoBehaviour
 
     public void Stop(bool stop)
     {
-        Debug.Log("Stop " + stop);
-
         //Si hay un cambio de script en este momento, se activara
         //ya que pondrá enabled a true
 

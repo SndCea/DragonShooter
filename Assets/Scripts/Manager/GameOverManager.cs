@@ -35,7 +35,7 @@ public class GameOverManager : MonoBehaviour
             SetCursorState(false);
             GameOverReleased();
             canvasGOver.SetActive(true);
-            VictoryManager.VictoryManagerInstance.SaveData();
+            VictoryManager.VictoryManagerInstance.SaveData(false);
         }
     }
     private void SetCursorState(bool newState)
