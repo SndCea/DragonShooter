@@ -121,17 +121,21 @@ public class DragonData : MonoBehaviour
 
     public void Stop(bool stop)
     {
-        if (stateMachine is SmallDragonStateMachine smallStateMachine)
+        if (stateMachine != null)
         {
-            smallStateMachine.Stop(stop);
+            if (stateMachine is SmallDragonStateMachine smallStateMachine)
+            {
+                smallStateMachine.Stop(stop);
+            }
+            if (stateMachine is MediumDragonStateMachine mediumStateMachine)
+            {
+                mediumStateMachine.Stop(stop);
+            }
+            if (stateMachine is BigDragonStateMachine bigStateMachine)
+            {
+                bigStateMachine.Stop(stop);
+            }
         }
-        if (stateMachine is MediumDragonStateMachine mediumStateMachine)
-        {
-            mediumStateMachine.Stop(stop);
-        }
-        if (stateMachine is BigDragonStateMachine bigStateMachine)
-        {
-            bigStateMachine.Stop(stop);
-        }
+        
     }
 }

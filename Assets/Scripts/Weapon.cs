@@ -116,54 +116,6 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    //public void Shoot()
-    //{
-    //    if (!dontShoot)
-    //    {
-    //        if (numShots < bullet.numMaxShots)
-    //        {
-    //            Ray ray = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().ScreenPointToRay(UnityEngine.Input.mousePosition);
-
-    //            RaycastHit hit;
-    //            numShots++;
-
-    //            audioSource.PlayOneShot(bullet.shotClip);
-    //            GameCanvasManager.GameManagerInstance.SetCanvasShots(numShots, bullet.numMaxShots, bullet.bulletSprite);
-
-    //            //Collision detection
-    //            if (Physics.Raycast(ray.origin, ray.direction, out hit, rayDistance, TargetLayer))
-    //            {
-    //                if (hit.collider.gameObject.GetComponent<Target>())
-    //                {
-    //                    hit.collider.gameObject.GetComponent<Target>().triggerExplodeAnimation();
-
-    //                    if (hit.collider.gameObject.GetComponent<Target>().TargetItem.type == XEntity.InventoryItemSystem.ItemType.PowerUp) 
-    //                    {
-    //                        InventoryManager.InventoryManagerInstance.AddItem(hit.collider.gameObject.GetComponent<Target>().TargetItem);
-    //                    }
-    //                    else if (hit.collider.gameObject.GetComponent<Target>().TargetItem.type == XEntity.InventoryItemSystem.ItemType.ToolOrWeapon)
-    //                    {
-    //                        numAmmoLeft++;
-    //                        GameCanvasManager.GameManagerInstance.SetCanvasAmmo(numAmmoLeft, bullet.ammoSprite);
-    //                    }
-    //                    else if (hit.collider.gameObject.GetComponent<Target>().TargetItem.type == XEntity.InventoryItemSystem.ItemType.MeteorShower)
-    //                    {
-    //                        VictoryManager.VictoryManagerInstance.SpawnMeteorShower();
-    //                    }
-
-                        
-    //                } else if (hit.collider.gameObject.transform.parent.transform.tag == "Dragon")
-    //                {
-    //                    hit.collider.gameObject.transform.parent.GetComponent<DragonData>().ApplyDamage(bulletDamage);
-    //                }
-    //            }
-    //        }
-    //        else
-    //        {
-    //            audioSource.PlayOneShot(emptyGunClip);
-    //        }
-    //    }
-    //}
     public void Reload ()
     {
         if (numAmmoLeft > 0)

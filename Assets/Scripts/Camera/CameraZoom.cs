@@ -13,7 +13,6 @@ public class CameraZoom : MonoBehaviour
         vCam = GetComponent<CinemachineVirtualCamera>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         

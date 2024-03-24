@@ -165,9 +165,6 @@ public class DragonSpawner : MonoBehaviour
 }
 
 
-
-
-
 public class TriggerListener : MonoBehaviour
 {
     public UnityEvent<int> OnTriggerEnterEvent = new UnityEvent<int>();
@@ -190,7 +187,6 @@ public class TriggerListener : MonoBehaviour
                 {
                     if (collider.gameObject.transform.tag.Equals("Dragon") )
                     {
-                        //collider.gameObject.transform.parent.GetComponent<DragonData>().Stop(false);
                         collider.gameObject.GetComponentInParent<DragonData>().Stop(false);
 
                     } else if (collider.gameObject.transform.parent != null && collider.gameObject.transform.parent.transform.tag.Equals("Dragon"))

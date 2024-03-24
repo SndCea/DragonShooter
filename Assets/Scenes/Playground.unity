@@ -339,9 +339,9 @@ MonoBehaviour:
   BigDragon: {fileID: 5562958451180771723, guid: 3167eb3ff1492a74cac1af1df1bad44d, type: 3}
   MediumDragon: {fileID: 2986120225540652732, guid: 4aa7db68838f12049a287d27005f19be, type: 3}
   SmallDragon: {fileID: 6386210963126895997, guid: 5a1d667852d7b0648aa01bf225a33a69, type: 3}
-  numTotalDragons: 4
-  numPercentBigDragon: 0.4
-  numPercentMediumDragon: 0.1
+  numTotalDragons: 3
+  numPercentBigDragon: 0.3
+  numPercentMediumDragon: 0.3
   terrainSize: {x: 500, y: 500}
   numQuadrants: 2
   fixedHeight: 20
@@ -13313,7 +13313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8762286024517199034, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
       propertyPath: CameraDistance
-      value: 0.04116362
+      value: 0.04116351
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}

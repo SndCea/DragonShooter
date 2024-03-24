@@ -19,11 +19,9 @@ public class RecordsRow : MonoBehaviour
     void Start()
     {
         roundText.text = round;
-        Debug.Log("Soy round " + round + " y llega win " + win);
         if (!win)
         {
             timeText.color = Color.red;
-            time = "-" + time;
         } else
         {
             timeText.color = Color.white;

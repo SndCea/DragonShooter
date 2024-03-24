@@ -6,7 +6,6 @@ public class RayRange : MonoBehaviour
 {
     [SerializeField] int rayDistance;
     [SerializeField] float lifetime;
-    // Start is called before the first frame update
     void Start()
     {
         IncreaseRayRange(true);

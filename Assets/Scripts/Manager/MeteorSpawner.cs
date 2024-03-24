@@ -31,23 +31,19 @@ public class MeteorSpawner : MonoBehaviour
 
         if (currentPrefabScript == null)
         {
-            // temporary effect, like a fireball
             currentPrefabScript = MeteorPrefab.GetComponent<FireBaseScript>();
             if (currentPrefabScript.IsProjectile)
             {
-                // set the start point near the player
                 rotation = transform.rotation;
                 pos = transform.position + forward + right + up;
             }
             else
             {
-                // set the start point in front of the player a ways
                 pos = transform.position + (forwardY * 10.0f);
             }
         }
         else
         {
-            // set the start point in front of the player a ways, rotated the same way as the player
             pos = transform.position + (forwardY * 5.0f);
             rotation = transform.rotation;
             pos.y = 0.0f;
@@ -56,7 +52,6 @@ public class MeteorSpawner : MonoBehaviour
         FireProjectileScript projectileScript = MeteorPrefab.GetComponentInChildren<FireProjectileScript>();
         if (projectileScript != null)
         {
-            // make sure we don't collide with other fire layers
             projectileScript.ProjectileCollisionLayers &= (~UnityEngine.LayerMask.NameToLayer("FireLayer"));
         }
 

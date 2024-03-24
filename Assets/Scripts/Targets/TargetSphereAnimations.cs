@@ -8,7 +8,6 @@ public class TargetSphereAnimations : MonoBehaviour
     public GameObject explosionParticleSystem;
     public AudioClip explosionClip;
     AudioSource audioSource;
-    // Start is called before the first frame update
     void Start()
     {
         animController = GetComponent<Animator>();

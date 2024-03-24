@@ -55,7 +55,7 @@ public class RecordsPage : MonoBehaviour
                         int winInt = PlayerPrefs.GetInt(nAttStringWin);
 
                         bool win = winInt == 1 ? true : false;
-
+                        if (!win) { time = -time; }
                         GameScore gameScore = new GameScore(i, time, win);
                         AllGameScores.Add(gameScore);
                     }
@@ -73,13 +73,32 @@ public class RecordsPage : MonoBehaviour
             auxRow.Round = AllGameScores[i].nAttempt.ToString();
             auxRow.Time = AllGameScores[i].time.ToString();
             auxRow.Win = AllGameScores[i].win;
-            Debug.Log("Win aqui es " + AllGameScores[i].win);
         }
 
     }
+
+    //Sort by time, but negatives are after positives
     public void OrderGameScores()
     {
-        AllGameScores.Sort((x, y) => x.time.CompareTo(y.time));
+        AllGameScores.Sort((x, y) =>
+        {
+            if (x.time >= 0 && y.time >= 0)
+            {
+                return x.time.CompareTo(y.time);
+            }
+            else if (x.time < 0 && y.time < 0)
+            {
+                return y.time.CompareTo(x.time);
+            }
+            else if (x.time >= 0 && y.time < 0)
+            {
+                return -1;
+            }
+            else
+            {
+                return 1;
+            }
+        });
     }
 }
 

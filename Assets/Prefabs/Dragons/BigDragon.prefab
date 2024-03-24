@@ -3222,7 +3222,7 @@ PrefabInstance:
     - target: {fileID: 3330179419156410464, guid: d93f392c51329bc49a70e826a6a087aa, type: 3}
       propertyPath: powerUp
       value: 
-      objectReference: {fileID: 1643169752399108878, guid: 1e6af79876ea9f346a7088602dd966c5, type: 3}
+      objectReference: {fileID: 6383633871003264671, guid: 226dacabb60349d4fa1ea65273a390ac, type: 3}
     - target: {fileID: 3330179419156410464, guid: d93f392c51329bc49a70e826a6a087aa, type: 3}
       propertyPath: stateMachine
       value: 
@@ -3285,7 +3285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3330179419156410467, guid: d93f392c51329bc49a70e826a6a087aa, type: 3}
       propertyPath: m_StoppingDistance
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4749787672301250104, guid: d93f392c51329bc49a70e826a6a087aa, type: 3}
       propertyPath: m_Name
